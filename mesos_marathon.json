@@ -1,0 +1,22 @@
+{
+  "id": "/mining/cuda-xmr-stak",
+  "cmd": "/bin/sh -c 'cd /etc/xmr-stak && gen-nvidida-txt.py > nvidia.txt && /usr/bin/xmr-stak --url europe.cryptonight-hub.miningpoolhub.com:20580 --user acecile.catch-all --pass x --rigid catch-all --currency cryptonight_v8 --httpd $PORT0 --noCPU'",
+  "user": "root",
+  "cpus": 0.5,
+  "gpus": 1,
+  "mem": 512,
+  "disk": 500,
+  "ports": [ 0 ],
+  "instances": 1,
+  "container": {
+    "type": "MESOS",
+    "docker": {
+      "image": "acecile/cuda-xmr-stak:latest",
+      "forcePullImage": true
+    }
+  },
+  "upgradeStrategy": {
+    "maximumOverCapacity": 0,
+    "minimumHealthCapacity": 0
+   }
+}
